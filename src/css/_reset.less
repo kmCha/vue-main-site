@@ -21,7 +21,6 @@ body,textarea,input,button{
 
 html,body{
     width:100%;
-    min-height: 930px;
     height: auto;
 }
 
@@ -45,35 +44,6 @@ html,body{
  :-ms-input-placeholder {
     /* Internet Explorer 10+ */
     color: @placehColor;
-}
-/*宽度限制板块*/
-.wbox {
-    width: 1200px;
-    margin: 0 auto;
-    clear: both;
-}
-.wbox:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
-.wbox {
-    display: inline-block;
-}
-/* Hides from IE-mac \*/
-* html .wbox {
-    zoom: 1;
-}
-.wbox {
-    display: block;
-    position: relative;
-}
-/* End hide from IE-mac */
-body {
-    width: 100%;
-    min-width: 1200px;
 }
 input,textarea,a,div,button,select{
     margin: 0;

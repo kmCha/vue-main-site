@@ -8,14 +8,10 @@ console.log('**********************')
 console.log(__DEBUG)
 console.log('**********************')
 
-let vm = new Vue({
+new Vue({
   el: '#app',
   router,
   store,
   mounted () {
   }
-})
-
-Vue.use({
-  vm
 })
