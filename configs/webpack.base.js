@@ -77,13 +77,33 @@ let config = {
         ]
 
       },
-      //使用 Babel
+      // 使用 Babel
       {
         test: /\.js$/, // 支持 js
         exclude: [/node_modules/, /lib/],
         use: ['happypack/loader?id=babel']
       },
-
+      // 依靠全局上下文的老库
+      {
+        test: /lib\/scripts\/[\w\W]+\.js$/,
+        use: [
+          {
+            loader: 'script-loader'
+          }
+        ]
+      },
+      // 将模型文件通过file-loader输出到model目录并得到输出url
+      {
+        type: 'javascript/auto',
+        test: /data\/index-model\/[\w\W]+\.json$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            outputPath: 'model',
+            name: '[name]_[hash:8].[ext]'
+          }
+        }]
+      },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/,
         use: [{
@@ -115,11 +135,6 @@ let config = {
             name: '[name]_[hash:8].[ext]'
           }
         }]
-      },
-      //art模板处理
-      {
-        test: /\.art$/,
-        use: "art-template-loader"
       },
       //html处理
       {
