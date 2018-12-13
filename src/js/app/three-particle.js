@@ -369,10 +369,17 @@ function onWindowResize() {
 	renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
-var step = 0;
-function render() {
-    // renderer.render(scene, camera);
-    animationFrame = requestAnimationFrame(render);
+var rendering = false;
+
+function render () {
+    if (rendering) return;
+
+    rendering = true;
+    loop();
+}
+function loop() {
+    console.log('render')
+    animationFrame = requestAnimationFrame(loop);
     TWEEN.update();
 
     camera.position.x += ( mouseX - camera.position.x ) * 0.05;
@@ -384,6 +391,7 @@ function render() {
 }
 
 function stopRender() {
+    rendering = false;
     cancelAnimationFrame(animationFrame);
 }
 
