@@ -60,7 +60,10 @@ export default {
       }
     }, 3500)
   },
-  beforeDestroy () {
+  activated () {
+    particle.render()
+  },
+  deactivated () {
     particle.stopRender()
   },
 }
