@@ -69,17 +69,19 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 .switch-enter-active, .switch-leave-active {
   transition: opacity 1.5s, filter 2s .5s;
   transition: opacity 1.5s, -webkit-filter 2s .5s;
-  filter: blur(0);
-  -webkit-filter: blur(0);
 }
-.switch-enter, .switch-leave-active {
+.switch-enter, .switch-leave-to {
   opacity: 0;
   filter: blur(100px);
   -webkit-filter: blur(100px);
+}
+.switch-enter-to, .switch-leave {
+  filter: blur(0);
+  -webkit-filter: blur(0);
 }
 .container-index {
   position: relative;

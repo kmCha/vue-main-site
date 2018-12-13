@@ -5,21 +5,27 @@ Vue.use(VueRouter)
 const Index = () => import(/* webpackChunkName:'Index' */'../../containers/Index')
 const Articles = () => import( /* webpackChunkName:'Articles' */ '../../containers/Articles')
 
-export default new VueRouter({
-  routes: [
+export var routes = [
     {
       path: '/',
       name: 'index',
-      component: Index
+      component: Index,
+      meta: {
+        title: '首页'
+      }
     },
     {
       path: '/articles',
       name: 'articles',
-      component: Articles
+      component: Articles,
+      meta: {
+        title: '文章'
+      }
     },
     {
       path: '*',
       redirect: '/'
     }
   ]
-})
+
+export default new VueRouter({routes})

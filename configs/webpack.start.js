@@ -36,7 +36,17 @@ const config = merge.smart(baseConfig, {
       {
         test: /\.less$/,
         // 因为这个插件需要干涉模块转换的内容，所以需要使用它对应的 loader
-        use: ['style-loader', 'vue-style-loader', 'css-loader', 'less-loader']
+        use: [
+          'style-loader',
+          'vue-style-loader',
+          'css-loader',
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true
+            }
+          }
+        ]
       },
       {
         test: /\.html$/,

@@ -77,11 +77,16 @@ const config = merge.smart(baseConfig, {
           {
             loader: 'css-loader',
             options: {
-              minimize: false
+              minimize: false,
             }
           },
           'sprites-loader',
-          'less-loader'
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true
+            }
+          },
         ]
 
         //use: [MiniCssExtractPlugin.loader,'happypack/loader?id=less']
