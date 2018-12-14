@@ -9,8 +9,29 @@
 </template>
 
 <script>
+import { getArticles, getTags } from '../js/app/api'
 
 export default {
+  created () {
+    getArticles().then(res => {
+      if (res.code === 1) {
+        this.$store.commit('setArticles', res.body)
+      } else {
+
+      }
+    }).catch(() => {
+
+    })
+    getTags().then(res => {
+      if (res.code === 1) {
+        this.$store.commit('setTags', res.body)
+      } else {
+
+      }
+    }).catch(() => {
+
+    })
+  }
 }
 </script>
 
