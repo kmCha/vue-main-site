@@ -1,7 +1,7 @@
 <template>
   <router-link
       class="card-wrap"
-      :to="{name: 'detail', params: {id: article.key}}">
+      :to="{name: 'detail', params: {key: article.key}}">
     <a-card
       class="article-card"
       hoverable
@@ -17,17 +17,17 @@
           :color="tag.color"
         >{{tag.name}}</a-tag>
       </div>
-      <div class="info-wrap">
-        <span class="info-item"><a-icon type="calendar" />{{article.date.substr(0, 10)}}</span>
-        <span class="info-item"><a-icon type="bars" />{{article.categories}}</span>
-      </div>
+      <ArticlesInfo :date="article.date.substr(0, 10)" :categories="article.categories" />
     </a-card>
   </router-link>
 </template>
 
 <script>
+import ArticlesInfo from './ArticlesInfo.vue'
+
 export default {
   name: 'ArticlesItem',
+  components: { ArticlesInfo },
   props: {
     article: {
       type: Object
@@ -44,16 +44,6 @@ export default {
   .article-card {
     .tag-wrap {
       text-align: center;
-    }
-    .info-wrap {
-      text-align: center;
-      .info-item {
-        display: inline-block;
-        margin: 15px 10px 0;
-        i {
-          margin: 0 5px;
-        }
-      }
     }
   }
 }

@@ -24,9 +24,6 @@ const config = merge.smart(baseConfig, {
       //构建 CSS
       {
         test: /\.css$/,
-        include: [
-          path.resolve(__dirname, 'src'),
-        ],
         //本地开发过程中不用打包成一个独立的 css 文件，直接使用 style 标签即可。
         use: ['style-loader', 'css-loader']
 

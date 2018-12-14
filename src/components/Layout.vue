@@ -8,14 +8,14 @@
         :defaultSelectedKeys="['1']"
       >
         <router-link
-          v-for="(item, index) in routeTabs"
+          v-for="(item, index) in navInfo"
           class="ant-menu-item"
           active-class="ant-menu-item-selected"
           :key="index"
           :to="{name: item.name}"
-          exact
+          :exact="item.name === 'index'"
         >
-          {{item.meta.title}}
+          {{item.title}}
         </router-link>
       </a-menu>
     </a-layout-header>
@@ -29,12 +29,20 @@
 </template>
 
 <script>
-import { routes } from '../js/router'
 export default {
   name: 'AppLayout',
   data () {
     return {
-      routeTabs: routes.filter(item => item.meta && item.meta.title)
+      navInfo: [
+        {
+          name: 'index',
+          title: '首页'
+        },
+        {
+          name: 'articlesDefault',
+          title: '文章'
+        }
+      ]
     }
   }
 }

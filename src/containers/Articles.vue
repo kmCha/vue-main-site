@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.container-inner {
+.articles {
   position: relative;
   .ant-pagination {
     text-align: center;

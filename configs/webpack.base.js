@@ -211,16 +211,16 @@ let config = {
           presets: [
             [
               'env', {
-              modules: false // 不要编译ES6模块
-            }
+                modules: false // 不要编译ES6模块
+              }
             ]
           ],
           plugins: [
             [
               "transform-runtime", {
-              "polyfill": false, //编译promise需要
-              "regenerator": true //编译async需要
-            }
+                "polyfill": false, //编译promise需要
+                "regenerator": true //编译async需要
+              }
             ]
           ]
         }
