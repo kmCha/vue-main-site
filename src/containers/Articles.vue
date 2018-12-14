@@ -2,10 +2,10 @@
   <app-layout>
     <div class="container-inner articles">
       <ArticlesItem
-        v-for="article in ($store.state.articlesList && $store.state.articlesList.slice((currPage-1)*pageSize, currPage*pageSize))"
+        v-for="article in ($store.state.articlesList && $store.state.articlesList.slice(($route.params.page-1)*pageSize, $route.params.page*pageSize))"
         :key="article.key"
         :article="article" />
-      <a-pagination :page-size="pageSize" v-model="currPage" :total="totalCount" @change="onPageChange" />
+      <a-pagination :page-size="pageSize" :current="currPage" :total="totalCount" @change="onPageChange" />
     </div>
   </app-layout>
 </template>
@@ -18,11 +18,13 @@ import $ from 'jquery'
 export default {
   data () {
     return {
-      currPage: 1,
       pageSize: 5
     }
   },
   computed: {
+    currPage () {
+      return window.parseInt(this.$route.params.page)
+    },
     totalCount () {
       return (this.$store.state.articlesList && this.$store.state.articlesList.length) || 0
     }
@@ -30,6 +32,12 @@ export default {
   components: { AppLayout, ArticlesItem },
   methods: {
     onPageChange (page) {
+      this.$router.push({
+        name: 'articles',
+        params: {
+          page
+        }
+      })
       $('html').animate({
         scrollTop: 0
       })

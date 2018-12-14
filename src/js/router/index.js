@@ -15,12 +15,16 @@ export var routes = [
       }
     },
     {
-      path: '/articles',
+      path: '/articles/:page',
       name: 'articles',
       component: Articles,
       meta: {
         title: '文章'
       }
+    },
+    {
+      path: '/articles',
+      redirect: '/articles/1',
     },
     {
       path: '*',
