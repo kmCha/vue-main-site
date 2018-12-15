@@ -5,6 +5,7 @@ Vue.use(VueRouter)
 const Index = () => import(/* webpackChunkName:'Index' */'../../containers/Index')
 const Articles = () => import( /* webpackChunkName:'Articles' */ '../../containers/Articles')
 const ArticlesDetail = () => import( /* webpackChunkName:'ArticlesDetail' */ '../../containers/ArticlesDetail')
+const Tags = () => import( /* webpackChunkName:'Tags' */ '../../containers/Tags')
 
 var routes = [
     {
@@ -26,6 +27,11 @@ var routes = [
       path: '/articles/detail/:key',
       name: 'detail',
       component: ArticlesDetail
+    },
+    {
+      path: '/tags',
+      name: 'tags',
+      component: Tags
     },
     {
       path: '*',

@@ -11,6 +11,10 @@ export default {
     }
   },
   removeFilterTag(state, tag) {
-    state.filterTagList.splice(state.filterTagList.findIndex(item => item.name === tag.name), 1)
+    if (tag) {
+      state.filterTagList.splice(state.filterTagList.findIndex(item => item.name === tag.name), 1)
+    } else {
+      state.filterTagList = []
+    }
   }
 }

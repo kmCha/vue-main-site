@@ -41,6 +41,10 @@ export default {
         {
           name: 'articlesDefault',
           title: '文章'
+        },
+        {
+          name: 'tags',
+          title: '标签'
         }
       ]
     }
