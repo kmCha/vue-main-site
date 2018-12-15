@@ -12,7 +12,8 @@ import {
   Tag,
   Icon,
   Pagination,
-  BackTop
+  BackTop,
+  Collapse
 } from 'ant-design-vue'
 Vue.use(Layout)
 Vue.use(Menu)
@@ -23,6 +24,7 @@ Vue.use(Tag)
 Vue.use(Icon)
 Vue.use(Pagination)
 Vue.use(BackTop)
+Vue.use(Collapse)
 
 // 组件
 import App from '../../containers/App.vue'

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { getArticles, getTags } from '../js/app/api'
+import { getArticles, getTags, getCategories } from '../js/app/api'
 
 export default {
   created () {
@@ -25,6 +25,15 @@ export default {
     getTags().then(res => {
       if (res.code === 1) {
         this.$store.commit('setTags', res.body)
+      } else {
+
+      }
+    }).catch(() => {
+
+    })
+    getCategories().then(res => {
+      if (res.code === 1) {
+        this.$store.commit('setCategories', res.body)
       } else {
 
       }

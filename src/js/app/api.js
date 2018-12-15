@@ -37,3 +37,19 @@ export function getTags () {
     })
   })
 }
+
+export function getCategories () {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: `${apiHost}/categories`,
+      type: 'GET',
+      dataType: 'json',
+      success: function (res) {
+        resolve(res)
+      },
+      error: function () {
+        reject(new Error('网络信号不好，请稍后再试'))
+      }
+    })
+  })
+}

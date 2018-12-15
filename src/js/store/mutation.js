@@ -16,5 +16,8 @@ export default {
     } else {
       state.filterTagList = []
     }
-  }
+  },
+  setCategories(state, list) {
+    state.categoryList = list
+  },
 }

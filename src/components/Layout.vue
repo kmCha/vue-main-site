@@ -45,6 +45,10 @@ export default {
         {
           name: 'tags',
           title: '标签'
+        },
+        {
+          name: 'categories',
+          title: '分类'
         }
       ]
     }
