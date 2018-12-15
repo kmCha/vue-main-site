@@ -4,5 +4,13 @@ export default {
   },
   setTags(state, list) {
     state.tagList = list
+  },
+  setFilterTag(state, tag) {
+    if (!state.filterTagList.some(item => item.name === tag.name)) {
+      state.filterTagList.push(tag)
+    }
+  },
+  removeFilterTag(state, tag) {
+    state.filterTagList.splice(state.filterTagList.findIndex(item => item.name === tag.name), 1)
   }
 }

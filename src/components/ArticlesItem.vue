@@ -15,6 +15,7 @@
           v-for="tag in article.tags"
           :key="tag.name"
           :color="tag.color"
+          @click="onTagClick($event, tag)"
         >{{tag.name}}</a-tag>
       </div>
       <ArticlesInfo :date="article.date.substr(0, 10)" :categories="article.categories" />
@@ -31,6 +32,13 @@ export default {
   props: {
     article: {
       type: Object
+    }
+  },
+  methods: {
+    onTagClick (e, tag) {
+      e.stopPropagation()
+      e.preventDefault()
+      this.$store.commit('setFilterTag', tag)
     }
   }
 }

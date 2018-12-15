@@ -58,4 +58,8 @@ export default {
 .fade-enter-to, .fade-leave {
   .opacity(1);
 }
+
+a:focus {
+  text-decoration: none;
+}
 </style>
