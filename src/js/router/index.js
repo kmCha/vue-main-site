@@ -7,6 +7,7 @@ const Articles = () => import( /* webpackChunkName:'Articles' */ '../../containe
 const ArticlesDetail = () => import( /* webpackChunkName:'ArticlesDetail' */ '../../containers/ArticlesDetail')
 const Tags = () => import( /* webpackChunkName:'Tags' */ '../../containers/Tags')
 const Categories = () => import( /* webpackChunkName:'Categories' */ '../../containers/Categories')
+const Achieves = () => import( /* webpackChunkName:'Achieves' */ '../../containers/Achieves')
 
 var routes = [
     {
@@ -38,6 +39,11 @@ var routes = [
       path: '/categories',
       name: 'categories',
       component: Categories
+    },
+    {
+      path: '/achieves',
+      name: 'achieves',
+      component: Achieves
     },
     {
       path: '*',

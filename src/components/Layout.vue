@@ -49,6 +49,10 @@ export default {
         {
           name: 'categories',
           title: '分类'
+        },
+        {
+          name: 'achieves',
+          title: '归档'
         }
       ]
     }
