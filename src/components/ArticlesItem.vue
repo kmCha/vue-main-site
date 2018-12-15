@@ -39,6 +39,12 @@ export default {
       e.stopPropagation()
       e.preventDefault()
       this.$store.commit('setFilterTag', tag)
+      this.$router.replace({
+        name: 'articles',
+        params: {
+          page: 1
+        }
+      })
     }
   }
 }

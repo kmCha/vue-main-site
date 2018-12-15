@@ -59,6 +59,12 @@ export default {
     },
     onFilterTagClose (tag) {
       this.$store.commit('removeFilterTag', tag)
+      this.$router.replace({
+        name: 'articles',
+        params: {
+          page: 1
+        }
+      })
     },
     filterArticlesByTags (article) {
       var { filterTagList } = this.$store.state
