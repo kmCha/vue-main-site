@@ -37,6 +37,9 @@ export default {
   },
   mounted () {
     this.initHighlight()
+    $('html').animate({
+      scrollTop: 0
+    })
   },
   methods: {
     back () {
