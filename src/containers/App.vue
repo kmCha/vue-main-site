@@ -39,17 +39,18 @@ export default {
 @import "../css/_mixin.less";
 
 .fade-enter-active, .fade-leave-active {
+  .transition(all .5s);
+}
+.fade-enter-active {
+  position: relative;
+  z-index: 5;
+}
+.fade-leave-active {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  .transition(all .3s);
-}
-.fade-enter-active {
-  z-index: 5;
-}
-.fade-leave-active {
   z-index: 4;
 }
 .fade-enter, .fade-leave-to {
