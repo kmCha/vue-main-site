@@ -11,8 +11,9 @@
         >{{tag.name}}</a-tag>
       </div>
       <ArticlesItem
-        v-for="article in articlesList"
+        v-for="(article, index) in articlesList"
         :key="article.key"
+        :class="[{odd: index % 2 === 1}]"
         :article="article" />
       <a-pagination :page-size="pageSize" :current="currPage" :total="totalCount" @change="onPageChange" />
     </div>
