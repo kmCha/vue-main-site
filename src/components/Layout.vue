@@ -1,7 +1,7 @@
 <template>
   <a-layout class="app-layout">
     <a-layout-header v-if="$route.name !== 'index'" class="app-header" theme="light">
-      <div class="logo" />
+      <div class="logo">Chamajiuxi's Blog</div>
       <a-menu
         class="app-header-menu"
         mode="horizontal"
@@ -15,6 +15,7 @@
           :to="{name: item.name}"
           :exact="item.name === 'index'"
         >
+          <a-icon :type="item.icon" />
           {{item.title}}
         </router-link>
       </a-menu>
@@ -23,7 +24,7 @@
       <slot></slot>
     </a-layout-content>
     <a-layout-footer v-if="$route.name !== 'index'" class="app-footer">
-      Ant Design ©2018 Created by Ant UED
+      Majiuxi Cha ©2018 Crafted by 查马纠西 UIed by AntD
     </a-layout-footer>
   </a-layout>
 </template>
@@ -36,23 +37,28 @@ export default {
       navInfo: [
         {
           name: 'index',
-          title: '首页'
+          title: '首页',
+          icon: 'home'
         },
         {
           name: 'articlesDefault',
-          title: '文章'
-        },
-        {
-          name: 'tags',
-          title: '标签'
+          title: '文章',
+          icon: 'profile'
         },
         {
           name: 'categories',
-          title: '分类'
+          title: '分类',
+          icon: 'bars'
         },
         {
           name: 'achieves',
-          title: '归档'
+          title: '归档',
+          icon: 'folder-open'
+        },
+        {
+          name: 'tags',
+          title: '标签',
+          icon: 'tag-o'
         }
       ]
     }
@@ -67,8 +73,16 @@ export default {
     width: 100%;
     z-index: 2;
     background-color: #fff;
+    .logo {
+      float: left;
+      font-family: 'Teko', cursive;
+      font-size: 30px;
+    }
     .app-header-menu {
       line-height: 64px;
+      .ant-menu-item {
+        float: right;
+      }
     }
   }
   .app-layout-content {
