@@ -33,6 +33,9 @@ mkdir('-p', mainSite);
 // 复制release下面的文件到main-side里
 echo('复制' + releasePath + '下面的文件到' + mainSite + '里');
 cp('-R', releasePath + '/*', mainSite);
+// 删除release文件夹
+echo('删除' + releasePath);
+rm('-rf', releasePath);
 // 把main-side文件夹里的index.html移动到github page里
 echo('把' + mainSite + '里的index.html移动到' + githubPage + '里');
 mv(mainSite + '/index.html', githubPage);
