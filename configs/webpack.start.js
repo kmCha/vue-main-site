@@ -44,18 +44,6 @@ const config = merge.smart(baseConfig, {
             }
           }
         ]
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-include-loader',
-            options: {
-              host: paramConfig.include_host,
-              encode: paramConfig.encode
-            }
-          }
-        ]
       }
     ]
   },

@@ -90,18 +90,6 @@ const config = merge.smart(baseConfig, {
         ]
 
         //use: [MiniCssExtractPlugin.loader,'happypack/loader?id=less']
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-include-loader',
-            options: {
-              host: paramConfig.include_host,
-              encode: paramConfig.encode
-            }
-          }
-        ]
       }
     ]
   }

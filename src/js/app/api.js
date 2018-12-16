@@ -1,9 +1,9 @@
 import $ from 'jquery'
 
-var apiHost = ''
+var apiHost = 'http://35.234.3.252:3000'
 
 if (__DEBUG) {
-  apiHost = 'http://test.163.com:3000'
+  apiHost = 'http://35.234.3.252:3000'
 }
 
 export function getArticles() {
