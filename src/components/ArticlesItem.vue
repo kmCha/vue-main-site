@@ -42,8 +42,6 @@ export default {
       } else {
         return ''
       }
-
-      console.log($content.find('img').length)
     }
   },
   props: {
@@ -64,7 +62,6 @@ export default {
       })
     },
     onImgLoad (e) {
-      console.log(e)
       e.target.src = require('../img/articles/img-error.jpg')
     }
   }

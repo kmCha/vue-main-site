@@ -378,7 +378,6 @@ function render () {
     loop();
 }
 function loop() {
-    console.log('render')
     animationFrame = requestAnimationFrame(loop);
     TWEEN.update();
 

@@ -3,7 +3,7 @@ import $ from 'jquery'
 var apiHost = 'http://35.234.3.252:3000'
 
 if (__DEBUG) {
-  apiHost = 'http://35.234.3.252:3000'
+  apiHost = 'http://localhost:3000'
 }
 
 export function getArticles() {

@@ -32,10 +32,6 @@ Vue.use(Timeline)
 import App from '../../containers/App.vue'
 Vue.component('App', App)
 
-console.log('**********************')
-console.log(__DEBUG)
-console.log('**********************')
-
 new Vue({
   el: '#wrap',
   router,
