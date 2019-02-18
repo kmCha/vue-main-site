@@ -1,4 +1,5 @@
 require('@/css/index.less')
+require('ant-design-vue/dist/antd.less')
 require('../../css/monokai-sublime.css')
 
 window.THREE = require('../lib/three')
